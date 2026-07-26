@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+pydantic
+joblib
+sqlalchemy
+pandas
+numpy
+scikit-learn
+xgboost
+lightgbm
+catboost
+shap
+matplotlib
+plotly
+python-multipart
+python-dotenv

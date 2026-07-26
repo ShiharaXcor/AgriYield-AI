@@ -1,0 +1,1 @@
+"# AgriYield AI`n`nIntelligent crop yield prediction and agricultural decision support system." | Out-File -FilePath README.md -Encoding utf8
