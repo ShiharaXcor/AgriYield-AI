@@ -1,6 +1,6 @@
 {
     "n_rows": 10000,
-    "n_columns": 46,
+    "n_columns": 47,
     "columns": [
         "Temperature",
         "Humidity",
@@ -47,13 +47,12 @@
         "Yield",
         "Region",
         "Season",
-        "Year"
+        "Year",
+        "Growing_Duration_Days"
     ],
     "categorical_columns": [
         "Soil_Type",
         "Crop_Type",
-        "Planting_Date",
-        "Harvest_Date",
         "Growth_Stage",
         "Fertilizer_Type",
         "Pesticide_Usage",
@@ -97,7 +96,8 @@
         "GDD",
         "Irrigation_Frequency",
         "Yield",
-        "Year"
+        "Year",
+        "Growing_Duration_Days"
     ],
     "missing_values": {},
     "duplicate_rows": 0

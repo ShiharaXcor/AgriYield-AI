@@ -1,0 +1,27 @@
+{
+    "original_shape": [
+        10000,
+        46
+    ],
+    "final_shape": [
+        10000,
+        46
+    ],
+    "missing_values_found": 0,
+    "duplicates_found": 0,
+    "outliers_found": 0,
+    "date_columns_converted": [
+        "Planting_Date",
+        "Harvest_Date"
+    ],
+    "categorical_columns_typed": [
+        "Soil_Type",
+        "Crop_Type",
+        "Growth_Stage",
+        "Fertilizer_Type",
+        "Pesticide_Usage",
+        "Region",
+        "Season"
+    ],
+    "notes": "Dataset was already clean (no missing values, no duplicates, no significant outliers by IQR). Cleaning focused on correcting dtypes (dates, categories) and validating physical plausibility of value ranges. NDVI and EVI negative values were checked and confirmed valid, since both vegetation indices legitimately range from -1 to +1."
+}
