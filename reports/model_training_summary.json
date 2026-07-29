@@ -1,0 +1,26 @@
+{
+    "models_trained": [
+        "Linear Regression",
+        "Decision Tree",
+        "XGBoost",
+        "LightGBM"
+    ],
+    "models_excluded": {
+        "Random Forest": "Excluded due to CPU/thermal constraints on local hardware during development",
+        "Gradient Boosting": "Excluded to focus tuning effort on core model comparison within time constraints",
+        "CatBoost": "Excluded to focus tuning effort on core model comparison within time constraints"
+    },
+    "best_model": "Linear Regression",
+    "best_model_metrics": {
+        "MAE": 0.39833960635011706,
+        "RMSE": 0.4992725531535405,
+        "R2": 0.9132331845907836,
+        "CV_R2_Mean": 0.9120660838280056,
+        "CV_R2_Std": 0.002649696611140368,
+        "Train_Time_Sec": 0.5246438980102539,
+        "Predict_Time_Sec": 0.014997243881225586
+    },
+    "residual_mean": 0.0001097261115440002,
+    "residual_std": 0.49927378956936197,
+    "notes": "All four evaluated models (Linear Regression, Decision Tree, XGBoost, LightGBM) clustered tightly around R\u00b2\u22480.91, indicating the underlying relationship between features (primarily Rainfall_mm) and Yield_tons_per_hectare is close to linear. Linear Regression was selected as the best model, offering strong accuracy alongside full interpretability and fast inference \u2014 a practical choice for production deployment."
+}
