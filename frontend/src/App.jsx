@@ -1,29 +1,33 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import AppLayout from "./layouts/AppLayout";
+
+import Dashboard from "./pages/Dashboard";
+import Prediction from "./pages/Prediction";
+import Analytics from "./pages/Analytics";
+import ModelPerformance from "./pages/ModelPerformance";
+import DecisionSupport from "./pages/DecisionSupport";
+import WhatIf from "./pages/WhatIf";
+import HistoryPage from "./pages/HistoryPage";
+import About from "./pages/About";
+
 function App() {
   return (
-    <div className="min-h-screen bg-canvas dark:bg-bg-dark flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-display font-semibold text-forest">
-          AgriYield AI
-        </h1>
-        <p className="mt-3 font-body text-stone">
-          Tailwind v4 + custom theme test
-        </p>
-        <div className="mt-6 flex gap-3 justify-center">
-          <span className="px-4 py-2 rounded-lg bg-forest text-white font-body text-sm">
-            Forest
-          </span>
-          <span className="px-4 py-2 rounded-lg bg-gold text-white font-body text-sm">
-            Gold
-          </span>
-          <span className="px-4 py-2 rounded-lg bg-irrigation text-white font-body text-sm">
-            Irrigation Blue
-          </span>
-          <span className="px-4 py-2 rounded-lg bg-rust text-white font-body text-sm">
-            Rust
-          </span>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Toaster position="top-right" />
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="predict" element={<Prediction />} />
+          <Route path="analytics" element={<Analytics />} />
+          <Route path="model-performance" element={<ModelPerformance />} />
+          <Route path="decision-support" element={<DecisionSupport />} />
+          <Route path="what-if" element={<WhatIf />} />
+          <Route path="history" element={<HistoryPage />} />
+          <Route path="about" element={<About />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
