@@ -92,14 +92,14 @@ frontend/.env
 backend/app/database/*.db
 
 # ============================
-# ML artifacts (uncomment if you don't want models tracked)
+# ML artifacts 
 # ============================
 # models/*.pkl
 # models/*.joblib
 # models/*.h5
 
-# Large raw datasets (uncomment if dataset is big / shouldn't be committed)
-# data/*.csv
+# Large raw datasets 
+data/*.csv
 
 # ============================
 # Docker
