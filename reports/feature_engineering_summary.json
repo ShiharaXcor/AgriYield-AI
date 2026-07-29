@@ -1,0 +1,21 @@
+{
+    "engineered_features": [
+        "Rainfall_per_Day",
+        "Fertilizer_Irrigation_Combo",
+        "Temperature_Deviation",
+        "Season_Length_Category"
+    ],
+    "encoding_method": "One-Hot Encoding (drop first category)",
+    "scaling_method": "StandardScaler",
+    "final_feature_count": 27,
+    "train_rows": 799815,
+    "test_rows": 199954,
+    "feature_correlation_check": {
+        "Rainfall_mm": 0.764,
+        "Rainfall_per_Day": 0.647,
+        "Temperature_Celsius": 0.085,
+        "Temperature_Deviation": 0.042,
+        "Days_to_Harvest": -0.003
+    },
+    "notes": "Created domain-informed interaction and derived features. Correlation check showed raw Rainfall_mm and Temperature_Celsius outperform their engineered counterparts (Rainfall_per_Day, Temperature_Deviation) in linear correlation with the target. Both raw and engineered versions were retained for model training; final feature relevance will be confirmed via feature importance and SHAP analysis in later notebooks, with low-value features candidates for removal at that stage."
+}

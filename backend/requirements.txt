@@ -14,3 +14,8 @@ matplotlib
 plotly
 python-multipart
 python-dotenv
+seaborn    
+missingno   
+matplotlib.pyplot    
+pymysql
+cryptography
