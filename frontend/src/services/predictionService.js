@@ -42,3 +42,14 @@ export const exportCSV = () => {
 export const exportPDF = () => {
   window.open(`${api.defaults.baseURL}/api/export/pdf`, "_blank");
 };
+
+export const getAnalytics = async (filters = {}) => {
+  const params = new URLSearchParams(filters).toString();
+  const response = await api.get(`/api/analytics${params ? `?${params}` : ""}`);
+  return response.data;
+};
+
+export const getFilterOptions = async () => {
+  const response = await api.get("/api/analytics/filter-options");
+  return response.data;
+};
