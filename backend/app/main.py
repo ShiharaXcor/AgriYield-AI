@@ -5,7 +5,7 @@ from app.config import APP_NAME, APP_VERSION, CORS_ORIGINS
 from app.database.connection import Base, engine
 from app.models.prediction import PredictionRecord
 
-from app.api import predict, model_info, dashboard, history, export
+from app.api import predict, model_info, dashboard, history, export, analytics
 
 # ============================
 # Create database tables on startup
@@ -43,6 +43,7 @@ app.include_router(model_info.router)
 app.include_router(dashboard.router)
 app.include_router(history.router)
 app.include_router(export.router)
+app.include_router(analytics.router)
 
 
 # ============================
