@@ -1,12 +1,11 @@
 import json
 from pathlib import Path
+import json
 from fastapi import APIRouter, HTTPException
 
-from app.config import BASE_DIR
+from app.config import REPORTS_DIR
 
 router = APIRouter(prefix="/api", tags=["Model Info"])
-
-REPORTS_DIR = BASE_DIR / "reports"
 
 
 @router.get("/model-performance")
