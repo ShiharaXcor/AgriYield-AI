@@ -1,0 +1,19 @@
+{
+    "strongest_positive_driver": "Rainfall_mm",
+    "moderate_drivers": [
+        "Fertilizer_Used",
+        "Irrigation_Used"
+    ],
+    "weak_drivers": [
+        "Temperature_Celsius",
+        "Days_to_Harvest"
+    ],
+    "no_signal_categoricals": [
+        "Region",
+        "Soil_Type",
+        "Crop",
+        "Weather_Condition"
+    ],
+    "figures_generated": 11,
+    "notes": "EDA confirms rainfall is the dominant driver of yield, with fertilizer and irrigation usage providing substantial secondary boosts, especially in combination. Temperature and days to harvest show weak influence. Categorical location/soil/crop/weather variables show minimal standalone correlation but may still contribute via interaction effects."
+}

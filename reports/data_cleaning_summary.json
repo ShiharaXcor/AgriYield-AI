@@ -1,0 +1,32 @@
+{
+    "original_shape": [
+        1000000,
+        10
+    ],
+    "final_shape": [
+        999769,
+        10
+    ],
+    "missing_values_found": 0,
+    "duplicates_found": 0,
+    "negative_yield_rows_removed": 231,
+    "outliers_before_cleaning": {
+        "Rainfall_mm": 0,
+        "Temperature_Celsius": 0,
+        "Days_to_Harvest": 0,
+        "Yield_tons_per_hectare": 84
+    },
+    "outliers_after_negative_removal": 28,
+    "outliers_retained": 28,
+    "categorical_columns_typed": [
+        "Region",
+        "Soil_Type",
+        "Crop",
+        "Weather_Condition"
+    ],
+    "boolean_columns_typed": [
+        "Fertilizer_Used",
+        "Irrigation_Used"
+    ],
+    "notes": "Dataset had no missing values or duplicates. Found and removed 84 rows with physically impossible negative yield values (data entry/measurement errors). After removal, 28 statistical outliers (IQR method) remained in the target variable, all representing legitimately high yields under favorable conditions (high rainfall, fertilizer used, irrigation used) rather than data errors. These were retained since they reflect real, explainable high-performing farm scenarios valuable for decision-support recommendations."
+}

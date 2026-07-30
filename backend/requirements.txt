@@ -11,6 +11,11 @@ lightgbm
 catboost
 shap
 matplotlib
+seaborn
+missingno
 plotly
 python-multipart
 python-dotenv
+pymysql
+cryptography
+fpdf2

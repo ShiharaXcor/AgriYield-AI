@@ -1,0 +1,27 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend venv
+backend/agriyield-venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+
+# Notebooks (not needed at runtime)
+notebooks/
+
+# Raw data - only cleaned_data.csv is needed by the backend
+data/*.csv
+!data/cleaned_data.csv
+
+# Reports - exclude large chart images, keep the JSON/CSV summaries the API reads
+reports/figures/
+reports/*.png
+
+# Git
+.git/
+.gitignore
+
+# Env files
+.env
+backend/.env

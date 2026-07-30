@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-forest: #0F3D2E;
+  --color-gold: #C99A3D;
+  --color-sage: #7FA189;
+  --color-rust: #B85C38;
+  --color-irrigation: #3B7A9E;
+  --color-plum: #8B5E9E;
+  --color-canvas: #F5F7F2;
+  --color-surface-dark: #1B231F;
+  --color-bg-dark: #111815;
+  --color-ink: #1A2420;
+  --color-stone: #6B7570;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas text-ink font-body antialiased;
+  }
+  .dark body {
+    @apply bg-bg-dark text-canvas;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}

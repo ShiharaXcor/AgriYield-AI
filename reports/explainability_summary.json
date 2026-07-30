@@ -1,0 +1,30 @@
+{
+    "model_explained": "LinearRegression",
+    "shap_sample_size": 2000,
+    "top_10_features_shap": [
+        "Rainfall_mm",
+        "Fertilizer_Used",
+        "Irrigation_Used",
+        "Fertilizer_Irrigation_Combo_Neither",
+        "Fertilizer_Irrigation_Combo_Irrigation_Only",
+        "Temperature_Celsius",
+        "Fertilizer_Irrigation_Combo_Fertilizer_Only",
+        "Soil_Type_Clay",
+        "Rainfall_per_Day",
+        "Region_North"
+    ],
+    "top_10_features_permutation": [
+        "Rainfall_mm",
+        "Fertilizer_Used",
+        "Irrigation_Used",
+        "Fertilizer_Irrigation_Combo_Neither",
+        "Fertilizer_Irrigation_Combo_Irrigation_Only",
+        "Temperature_Celsius",
+        "Fertilizer_Irrigation_Combo_Fertilizer_Only",
+        "Region_North",
+        "Soil_Type_Sandy",
+        "Crop_Wheat"
+    ],
+    "agreement_count": 8,
+    "notes": "SHAP and permutation importance were computed on the selected best model to identify and validate the most influential features. Strong agreement between methods indicates stable, genuine feature relationships rather than artifacts of a single explanation technique."
+}

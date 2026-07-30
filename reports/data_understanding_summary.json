@@ -1,0 +1,36 @@
+{
+    "n_rows": 1000000,
+    "n_columns": 10,
+    "columns": [
+        "Region",
+        "Soil_Type",
+        "Crop",
+        "Rainfall_mm",
+        "Temperature_Celsius",
+        "Fertilizer_Used",
+        "Irrigation_Used",
+        "Weather_Condition",
+        "Days_to_Harvest",
+        "Yield_tons_per_hectare"
+    ],
+    "categorical_columns": [
+        "Region",
+        "Soil_Type",
+        "Crop",
+        "Weather_Condition"
+    ],
+    "boolean_columns": [
+        "Fertilizer_Used",
+        "Irrigation_Used"
+    ],
+    "numerical_columns": [
+        "Rainfall_mm",
+        "Temperature_Celsius",
+        "Days_to_Harvest"
+    ],
+    "target_column": "Yield_tons_per_hectare",
+    "missing_values": 0,
+    "duplicate_rows": 0,
+    "top_correlated_feature": "Rainfall_mm",
+    "top_correlation_value": 0.7646179592717693
+}
