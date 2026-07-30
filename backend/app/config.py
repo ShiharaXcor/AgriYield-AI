@@ -7,20 +7,32 @@ load_dotenv()
 
 # ============================
 # Base paths
+# Works both locally (venv) and inside Docker containers.
 # ============================
-BASE_DIR = Path(__file__).resolve().parent.parent.parent  # points to AgriYield-AI/
+BASE_DIR = Path(__file__).resolve().parent.parent.parent  # points to AgriYield-AI/backend locally
+
+RUNNING_IN_DOCKER = os.getenv("RUNNING_IN_DOCKER", "false").lower() == "true"
+
+if RUNNING_IN_DOCKER:
+    MODEL_PATH = Path("/models/best_model.pkl")
+    ENCODER_PATH = Path("/models/preprocessing/onehot_encoder.pkl")
+    SCALER_PATH = Path("/models/preprocessing/scaler.pkl")
+    FEATURE_COLUMNS_PATH = Path("/models/preprocessing/feature_columns.pkl")
+    SHAP_BACKGROUND_PATH = Path("/models/preprocessing/shap_background_sample.pkl")
+    DATA_PATH_OVERRIDE = Path("/data/cleaned_data.csv")
+    REPORTS_DIR = Path("/reports")
+else:
+    PROJECT_ROOT = BASE_DIR.parent
+    MODEL_PATH = PROJECT_ROOT / "models" / "best_model.pkl"
+    ENCODER_PATH = PROJECT_ROOT / "models" / "preprocessing" / "onehot_encoder.pkl"
+    SCALER_PATH = PROJECT_ROOT / "models" / "preprocessing" / "scaler.pkl"
+    FEATURE_COLUMNS_PATH = PROJECT_ROOT / "models" / "preprocessing" / "feature_columns.pkl"
+    SHAP_BACKGROUND_PATH = PROJECT_ROOT / "models" / "preprocessing" / "shap_background_sample.pkl"
+    DATA_PATH_OVERRIDE = None
+    REPORTS_DIR = PROJECT_ROOT / "reports"
 
 # ============================
-# Model & preprocessing artifact paths
-# ============================
-MODEL_PATH = BASE_DIR / "models" / "best_model.pkl"
-ENCODER_PATH = BASE_DIR / "models" / "preprocessing" / "onehot_encoder.pkl"
-SCALER_PATH = BASE_DIR / "models" / "preprocessing" / "scaler.pkl"
-FEATURE_COLUMNS_PATH = BASE_DIR / "models" / "preprocessing" / "feature_columns.pkl"
-SHAP_BACKGROUND_PATH = BASE_DIR / "models" / "preprocessing" / "shap_background_sample.pkl"
-
-# ============================
-# Database configuration (MySQL via MySQL Workbench)
+# Database configuration (MySQL)
 # ============================
 DB_USER = os.getenv("DB_USER", "root")
 DB_PASSWORD = quote_plus(os.getenv("DB_PASSWORD", ""))  # URL-encodes special characters safely
@@ -36,6 +48,7 @@ DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB
 CORS_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:3000",
+    "http://localhost",
 ]
 
 # ============================

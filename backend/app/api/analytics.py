@@ -2,11 +2,14 @@ import pandas as pd
 from fastapi import APIRouter, HTTPException
 from functools import lru_cache
 
-from app.config import BASE_DIR
+from app.config import BASE_DIR, DATA_PATH_OVERRIDE, RUNNING_IN_DOCKER
 
 router = APIRouter(prefix="/api", tags=["Analytics"])
 
-DATA_PATH = BASE_DIR / "data" / "cleaned_data.csv"
+if DATA_PATH_OVERRIDE:
+    DATA_PATH = DATA_PATH_OVERRIDE
+else:
+    DATA_PATH = BASE_DIR.parent / "data" / "cleaned_data.csv"
 
 
 @lru_cache(maxsize=1)
